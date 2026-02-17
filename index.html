@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TC Carpentry - Quality Carpentry Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS for elements that need more specific styling */
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 80vh;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .nav-link:hover::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: #d97706;
+            margin-top: 2px;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://i.imgur.com/iJzXmp1.png" alt="TC Carpentry Logo" class="h-12 mr-3">
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-gray-800 font-medium hover:text-amber-600 transition">Home</a>
+                <a href="#services" class="nav-link text-gray-800 font-medium hover:text-amber-600 transition">Services</a>
+                <a href="#projects" class="nav-link text-gray-800 font-medium hover:text-amber-600 transition">Projects</a>
+                <a href="#about" class="nav-link text-gray-800 font-medium hover:text-amber-600 transition">About</a>
+                <a href="#contact" class="nav-link text-gray-800 font-medium hover:text-amber-600 transition">Contact</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <!-- <a href="tel:+1234567890" class="hidden md:flex items-center text-gray-800 hover:text-amber-600"> -->
+                    <!-- <i class="fas fa-phone mr-2"></i> -->
+                    <span>tccarpentrymaui@gmail.com </span>
+                </a>
+                <!-- <button class="md:hidden text-gray-800" id="mobile-menu-button">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button> -->
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white w-full py-4 px-4 shadow-lg" id="mobile-menu">
+            <div class="flex flex-col space-y-4">
+                <a href="#home" class="text-gray-800 font-medium hover:text-amber-600 transition">Home</a>
+                <a href="#services" class="text-gray-800 font-medium hover:text-amber-600 transition">Services</a>
+                <a href="#projects" class="text-gray-800 font-medium hover:text-amber-600 transition">Projects</a>
+                <a href="#about" class="text-gray-800 font-medium hover:text-amber-600 transition">About</a>
+                <a href="#contact" class="text-gray-800 font-medium hover:text-amber-600 transition">Contact</a>
+                <a href="tel:+1234567890" class="flex items-center text-gray-800 hover:text-amber-600">
+                    <i class="fas fa-phone mr-2"></i>
+                    <span>(123) 456-7890</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero flex items-center justify-center pt-20">
+        <div class="container mx-auto px-4 text-center text-white animate-fade-in">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Quality <span class="text-amber-400">Carpentry</span> Services</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Transforming your vision into reality with precision craftsmanship and attention to detail.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-6 rounded-md transition duration-300">Get a Free Quote</a>
+                <a href="#services" class="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-6 rounded-md transition duration-300">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-gray-100 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-4xl font-bold text-amber-600 mb-2">10+</div>
+                    <div class="text-gray-700 font-medium">Years Experience</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-4xl font-bold text-amber-600 mb-2">100+</div>
+                    <div class="text-gray-700 font-medium">Projects Completed</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-4xl font-bold text-amber-600 mb-2">100%</div>
+                    <div class="text-gray-700 font-medium">Satisfied Clients</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our <span class="text-amber-600">Services</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">From custom furniture to complete home renovations, we provide a wide range of carpentry services tailored to your needs.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-amber-100 flex items-center justify-center">
+                        <i class="fas fa-home text-6xl text-amber-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Home Repair</h3>
+                        <!-- <p class="text-gray-600 mb-4">Beautiful, handcrafted cabinets designed to fit your space perfectly and enhance your home's functionality.</p> -->
+                        <!-- <a href="#" class="text-amber-600 font-medium hover:text-amber-700 flex items-center">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </a> -->
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-amber-100 flex items-center justify-center">
+                        <i class="fas fa-door-open text-6xl text-amber-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Small Home Renovations</h3>
+                        <!-- <p class="text-gray-600 mb-4">Expert installation of interior and exterior doors to improve security, energy efficiency, and aesthetics.</p> -->
+                        <!-- <a href="#" class="text-amber-600 font-medium hover:text-amber-700 flex items-center">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </a> -->
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-amber-100 flex items-center justify-center">
+                        <i class="fas fa-couch text-6xl text-amber-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Custom  Furniture</h3>
+                        <!-- <p class="text-gray-600 mb-4">Unique, handcrafted furniture pieces built to your specifications and designed to last for generations.</p>
+                        <a href="#" class="text-amber-600 font-medium hover:text-amber-700 flex items-center">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our <span class="text-amber-600">Projects</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Take a look at some of our recent work and see the quality craftsmanship we bring to every project.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project 1 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Custom Kitchen" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="text-center text-white p-4">
+                            <h3 class="text-xl font-bold mb-2">Modern Kitchen Remodel</h3>
+                            <p class="mb-4">Complete kitchen renovation with custom cabinetry and island</p>
+                            <a href="#" class="inline-block bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-md">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Custom Wardrobe" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="text-center text-white p-4">
+                            <h3 class="text-xl font-bold mb-2">Walk-in Wardrobe</h3>
+                            <p class="mb-4">Custom built wardrobe with premium materials</p>
+                            <a href="#" class="inline-block bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-md">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Deck Construction" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="text-center text-white p-4">
+                            <h3 class="text-xl font-bold mb-2">Outdoor Deck</h3>
+                            <p class="mb-4">Custom cedar deck with built-in seating</p>
+                            <a href="#" class="inline-block bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-md">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-gray-800 hover:bg-black text-white font-bold py-3 px-8 rounded-md transition duration-300">
+                    View All Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Carpenter at work" class="rounded-lg shadow-xl w-full">
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">About <span class="text-amber-600">TC Carpentry</span></h2>
+                    <p class="text-gray-600 mb-4">From framing custom Maui homes in 2014 to mastering high-end finish work in world-class hotels, I’ve spent the last decade helping to continue to develop this island. After years in the Carpenters Union, I launched my own business in 2025 with a mission to provide homeowners with the focused attention their renovations deserve.
+
+I’m a local father, a coach, and a craftsman. I don't just build houses; I help families improve their homes. If you have a project that needs a professional touch without the big-contractor headache, let's talk.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-amber-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-check text-amber-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Licensed & Insured</h4>
+                                <p class="text-gray-600">Fully licensed and insured for your peace of mind</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-amber-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-check text-amber-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Quality Materials</h4>
+                                <p class="text-gray-600">We only use the highest quality materials from trusted suppliers</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-amber-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-check text-amber-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Satisfaction Guarantee</h4>
+                                <p class="text-gray-600">We stand behind our work with a satisfaction guarantee</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-amber-600 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">What Our <span class="text-gray-900">Clients Say</span></h2>
+                <p class="max-w-2xl mx-auto opacity-90">Don't just take our word for it - hear from our satisfied customers</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah Johnson" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Sarah Johnson</h4>
+                            <div class="flex text-amber-300">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="italic">"TC Carpentry transformed our outdated kitchen into a modern masterpiece. Their attention to detail was incredible, and they finished the project ahead of schedule. Highly recommend!"</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Thompson" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Michael Thompson</h4>
+                            <div class="flex text-amber-300">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="italic">"The custom bookshelves they built for my home office are absolutely stunning. The craftsmanship is top-notch, and they perfectly match the vision I had in mind."</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emily Rodriguez" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Emily Rodriguez</h4>
+                            <div class="flex text-amber-300">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="italic">"From the initial consultation to the final walkthrough, the team at TC Carpentry was professional, communicative, and delivered exceptional results. Our new deck is the envy of the neighborhood!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Get In <span class="text-amber-600">Touch</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Ready to start your project? Contact us today for a free consultation and quote: <b>tccarpentrymaui@gmail.com</b </p>
+            </div>
+            
+            <!-- <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <form class="bg-white p-8 rounded-lg shadow-md">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+                        <div class="mb-6">
+                            <label for="service" class="block text-gray-700 font-medium mb-2">Service Needed</label>
+                            <select id="service" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500">
+                                <option value="">Select a service</option>
+                                <option value="cabinetry">Custom Cabinetry</option>
+                                <option value="doors">Door Installation</option>
+                                <option value="furniture">Custom Furniture</option>
+                                <option value="renovation">Home Renovation</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Project Details</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-4 rounded-md transition duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div> -->
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-white p-8 rounded-lg shadow-md h-full">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt text-amber-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">Our Location</h4>
+                                    <p class="text-gray-600">123 Carpenter Street, Woodville, CA 90210</p>
+                                </div>
+                            </div>
+                            <br></br>
+                            <!-- <div class="flex items-start">
+                                ? -->
+                                    <!-- <i class="fas fa-phone text-amber-600"></i>
+                                </div> -->
+                                <!-- <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">Call Us</h4>
+                                    <p class="text-gray-600">(123) 456-7890</p>
+                                    <p class="text-gray-600">Mon-Fri: 8:00 AM - 5:00 PM</p>
+                                </div> -->
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-amber-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">Email Us</h4>
+                                    <p class="text-gray-600">tccarpentrymaui@gmail.com </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-bold text-gray-800 mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-gray-200 hover:bg-amber-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="bg-gray-200 hover:bg-amber-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="bg-gray-200 hover:bg-amber-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="bg-gray-200 hover:bg-amber-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="bg-amber-600 p-2 rounded-md mr-3">
+                            <i class="fas fa-hammer text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">TC <span class="text-amber-400">Carpentry</span></h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">Quality craftsmanship for all your carpentry needs. Serving the community since 2014.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-amber-400 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-amber-400 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-amber-400 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-amber-400 transition">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-amber-400 transition">Services</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-amber-400 transition">Projects</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-amber-400 transition">About Us</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-amber-400 transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-amber-400 transition">Custom Cabinetry</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-400 transition">Door Installation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-400 transition">Home Repair</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-400 transition">Home Renovation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-400 transition">Deck Building</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact Info</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-amber-400 mt-1 mr-3"></i>
+                            <span class="text-gray-400">123 Carpenter Street, Woodville, CA 90210</span>
+                        </li>
+                        <!-- <li class="flex items-center">
+                            <i class="fas fa-phone text-amber-400 mr-3"></i>
+                            <span class="text-gray-400">(123) 456-7890</span>
+                        </li> -->
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-amber-400 mr-3"></i>
+                            <span class="text-gray-400">tccarpentrymaui@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 TC Carpentry. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate-fade-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=bwaki/tc-carpentry" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
